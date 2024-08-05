@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrant Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        fieldset {
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 28px;
+            text-align: right;
+            border: 2px solid #ff6f61;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .button {
+            width: 100%;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #ffddc1;
+            margin: 2px 0;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #ffbb91;
+            transform: scale(1.05);
+        }
+        .mathButtons {
+            background-color: #ff6f61;
+            color: #ffffff;
+        }
+        .mathButtons:hover {
+            background-color: #ff4f4f;
+        }
+        .digits {
+            background-color: #ffddc1;
+        }
+        #clearButton {
+            background-color: #ff4f4f;
+            color: #ffffff;
+        }
+        #clearButton:hover {
+            background-color: #ff1a1a;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+       #display{
+        width: 90%;
+       }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <fieldset>
+            <form name="calculator">
+                <h1 style="text-align: center; color: #9b1d1d;">SIMPLE CALCULATOR</h1>
+                <input id="display" type="text" name="display" readonly>
+                <div class="button-container">
+                    <input id="clearButton" class="button" type="button" value="C" onclick="calculator.display.value = ''">
+                    <input class="button mathButtons" type="button" value="/" onclick="calculator.display.value += ' / '">
+                    <input class="button mathButtons" type="button" value="x" onclick="calculator.display.value += ' * '">
+                    <input class="button mathButtons" type="button" value="+" onclick="calculator.display.value += ' + '">
+
+                    <input class="button digits" type="button" value="7" onclick="calculator.display.value += '7'">
+                    <input class="button digits" type="button" value="8" onclick="calculator.display.value += '8'">
+                    <input class="button digits" type="button" value="9" onclick="calculator.display.value += '9'">
+                    <input class="button mathButtons" type="button" value="-" onclick="calculator.display.value += ' - '">
+
+                    <input class="button digits" type="button" value="4" onclick="calculator.display.value += '4'">
+                    <input class="button digits" type="button" value="5" onclick="calculator.display.value += '5'">
+                    <input class="button digits" type="button" value="6" onclick="calculator.display.value += '6'">
+                    <input class="button mathButtons" type="button" value="=" onclick="calculator.display.value = eval(calculator.display.value)">
+
+                    <input class="button digits" type="button" value="1" onclick="calculator.display.value += '1'">
+                    <input class="button digits" type="button" value="2" onclick="calculator.display.value += '2'">
+                    <input class="button digits" type="button" value="3" onclick="calculator.display.value += '3'">
+                    <input class="button digits" type="button" value="0" onclick="calculator.display.value += '0'">
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>
